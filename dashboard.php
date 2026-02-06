@@ -1,6 +1,7 @@
-
 <?php
 session_start();
+
+// hakikisha user amelogin
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -14,35 +15,15 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
 
-<div class="header">
-    <h2>Online Discussion Forum</h2>
-    <a href="logout.php">Logout</a>
-</div>
+<h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></h2>
 
-<div class="container">
-    <div class="card">
-        <h3>Welcome, <?php echo $_SESSION['username']; ?> 👋</h3>
-        <p>You are successfully logged in.</p>
-    </div>
-</div>
-<?php
-include "db.php";
-$result = mysqli_query($conn,
-    "SELECT posts.*, users.username
-     FROM posts
-     JOIN users ON posts.user_id = users.user_id
-     ORDER BY post_id DESC"
-);
+<p>Select what you want to do:</p>
 
-while ($row = mysqli_fetch_assoc($result)) {
-?>
-<div class="card">
-    <h3><?php echo $row['title']; ?></h3>
-    <p><?php echo $row['content']; ?></p>
-    <small>Posted by <?php echo $row['username']; ?></small><br>
-    <a href="view_post.php?id=<?php echo $row['post_id']; ?>">View comments</a>
-</div>
-<?php } ?>
+<ul>
+    <li><a href="create_post.php">➕ Create New Post</a></li>
+    <li><a href="view_posts.php">📄 View Posts</a></li>
+    <li><a href="logout.php">🚪 Logout</a></li>
+</ul>
 
 </body>
 </html>
