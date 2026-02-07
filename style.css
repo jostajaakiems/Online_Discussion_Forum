@@ -1,34 +1,94 @@
+/* ===== GLOBAL ===== */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #f4f6f8;
     margin: 0;
-    padding: 0;
-}
-
-.header {
-    background: #2c3e50;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header a {
-    color: #fff;
-    text-decoration: none;
-    background: #e74c3c;
-    padding: 8px 12px;
-    border-radius: 4px;
-}
-
-.container {
     padding: 20px;
+    color: #333;
 }
 
-.card {
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== HEADINGS ===== */
+h2, h3 {
+    color: #222;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    background: #0066cc;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #004999;
+}
+
+/* ===== FORMS ===== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ===== POST CARD ===== */
+.post-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.post-card h3 {
+    margin-top: 0;
+}
+
+/* ===== SINGLE POST ===== */
+.single-post {
     background: #fff;
     padding: 20px;
     border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* ===== COMMENTS ===== */
+.comment {
+    background: #fafafa;
+    border-left: 4px solid #0066cc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* ===== NAV LINKS ===== */
+.nav {
+    margin-bottom: 20px;
 }

@@ -34,10 +34,22 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
 
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<div style='border:1px solid #ccc; padding:10px; margin-bottom:15px; width:600px;'>";
-        echo "<h3>" . htmlspecialchars($row['title']) . "</h3>";
+        echo "<div class='post-card'>";
+
+        // TITLE AS LINK TO SINGLE POST
+        echo "<h3>
+                <a href='single_post.php?post_id=" . $row['post_id'] . "'>
+                    " . htmlspecialchars($row['title']) . "
+                </a>
+              </h3>";
+
+        // POST CONTENT (preview)
         echo "<p>" . nl2br(htmlspecialchars($row['content'])) . "</p>";
-        echo "<small>Posted by <b>" . htmlspecialchars($row['username']) . "</b></small>";
+
+        echo "<small>
+                Posted by <b>" . htmlspecialchars($row['username']) . "</b>
+              </small>";
+
         echo "</div>";
     }
 
